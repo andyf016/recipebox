@@ -1,0 +1,8 @@
+<h1>You Requested recipe ID {{recipe_id}}</h1>
+{% if not recipe %}
+    <h1>Not Found</h1>
+{% else %}
+    <h2>{{ recipe.title }}</h2>
+    <h4>{{ recipe.author.name }}</h4>
+    <p>{{ recipe.description }}</p>
+{% endif %}
