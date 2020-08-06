@@ -1,0 +1,12 @@
+{% if not author %}
+    <h1>Not Found</h1>
+{% else %}
+    <h1>{{ author.name }}</h1>
+    <h2><u>Bio</u></h2>
+    <p>{{ author.bio }}</p>
+    <h2><u>Contributions</u></h2>
+    {% for recipe in recipes %}
+    <h4><a href="/recipe/{{ recipe.id }}/">{{recipe.title}}</h4></a>
+    {% endfor %}
+{% endif %}
+

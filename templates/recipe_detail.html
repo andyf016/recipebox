@@ -1,8 +1,11 @@
-<h1>You Requested recipe ID {{recipe_id}}</h1>
 {% if not recipe %}
     <h1>Not Found</h1>
 {% else %}
-    <h2>{{ recipe.title }}</h2>
-    <h4>{{ recipe.author.name }}</h4>
+    <h1>{{ recipe.title }}</h1>
+    <h3>By: <a href="/author/{{ recipe.author.id }}/">{{ recipe.author.name }}</a></h3>
+    <h3><u>Description</u></h3>
     <p>{{ recipe.description }}</p>
+    <h4><u>Time Required:</u> {{ recipe.time_required }}</h4>
+    <h4><u>Procedure</u></h4>
+    <p>{{ recipe.instructions }}</p>
 {% endif %}
