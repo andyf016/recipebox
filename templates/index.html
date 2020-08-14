@@ -1,4 +1,7 @@
 <h1><u>Recipes</u></h1>
+    {% if request.user.is_authenticated %}
+        <h3>Logged in as: {{request.user.author.name}}</h3>
+    {% endif %}
 <ul>
 {% for recipe in recipes %}
     <li>
@@ -7,7 +10,12 @@
     </li>
 {% endfor %}
 </ul>
-
+<a href="/login">Login</a>
+<br>
+<a href="/signup">Sign Up</a>
+<br>
 <a href="/newrecipe">Add Recipe</a>
 <br>
 <a href="/newauthor">Add Author</a>
+<br>
+<a href="/logout">Logout</a>
